@@ -1,5 +1,5 @@
 from db import db
-from utils.helpers import generate_uuid
+from utils.helpers import generate_uuid, whitelisted_active_blacklisted_block
 
 
 class UserModel(db.Model):
@@ -19,9 +19,9 @@ class UserModel(db.Model):
 
     def json(self):
         return {
-            "userId": self.user_id,
-            "phoneNumber": self.phone_number,
-            "isWhitelisted": self.is_whitelisted
+            "status_code": 1,
+            "message": whitelisted_active_blacklisted_block(self.is_whitelisted),
+            "phoneNumber": self.phone_number
         }
 
     @classmethod
