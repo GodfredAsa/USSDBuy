@@ -27,7 +27,6 @@ class AddAdminResource(Resource):
 
 
 class AdminLoginResource(Resource):
-
     def post(self):
         data = request.get_json()
         if not verify_credentials(data['email'], data['password']):

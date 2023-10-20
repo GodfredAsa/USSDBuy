@@ -32,7 +32,6 @@ def whitelisted_active_blacklisted_block(status: bool) -> str:
     return "active" if status else "blocked"
 
 
-
 def verify_credentials(email, password):
     if not AdminModel.find_by_email(email):
         return False

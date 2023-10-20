@@ -45,11 +45,6 @@ api.add_resource(WhitelistUserResource, WHITELIST_USER_URI)
 api.add_resource(EditAndDeleteUserResource, EDIT_DELETE_USER_URI)
 
 
-
-
-
-# 0548670632
-
 if __name__ == "__main__":
     db.init_app(app)
     app.run(port=5003, debug=True)
