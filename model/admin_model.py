@@ -1,7 +1,5 @@
 import uuid
-
 from db import db
-# from utils.helpers import generate_uuid
 
 
 class AdminModel(db.Model):
@@ -18,6 +16,9 @@ class AdminModel(db.Model):
         self.is_admin = True
         self.password = password
 
+    def __str__(self):
+        return f"<Admin: ID:{self.admin_id}, email:{self.email} isAdmin: {self.is_admin}>"
+
     def json(self):
         return {
             "adminId": self.admin_id,
@@ -32,9 +33,9 @@ class AdminModel(db.Model):
     def find_by_email(cls, email: str) -> 'AdminModel':
         return AdminModel.query.filter_by(email=email).first()
 
-    @classmethod
-    def find_id(cls, admin_id: str) -> 'AdminModel':
-        return AdminModel.query.filter_by(admin_id=admin_id).first()
+    # @classmethod
+    # def find_id(cls, admin_id: str) -> 'AdminModel':
+    #     return AdminModel.query.filter_by(admin_id=admin_id).first()
 
     @classmethod
     def admin_exist(cls, email):

@@ -15,7 +15,7 @@ class UserModel(db.Model):
         self.is_whitelisted = True
 
     def __str__(self):
-        return f"<User: ID:{self.id}, Phone number:{self.phone_number}, isWhitelisted:{self.is_whitelisted}>"
+        return f"<User: ID:{self.user_id}, Phone number:{self.phone_number}, isWhitelisted:{self.is_whitelisted}>"
 
     def json(self):
         return {
