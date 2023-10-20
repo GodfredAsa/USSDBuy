@@ -5,7 +5,7 @@ from constants.app_constants import SQLALCHEMY_DATABASE_URI, DB_CONNECTION_STRIN
 from db import db
 
 
-class BaseTest(TestCase):
+class SystemBaseTest(TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         app.config[SQLALCHEMY_DATABASE_URI] = os.environ.get(SQLALCHEMY_DATABASE_URI[11:], DB_CONNECTION_STRING[:-7])
